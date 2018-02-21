@@ -1,7 +1,22 @@
+#Gist
+https://gist.github.com/jeffprestes/eea72b01f2c033837f2492921901fe33#file-gistfile1-txt
+
+# Comandos rápidos #
 1
 geth --datadir "/Users/jeffprestes/testethereum-2" --networkid 15 --identity "jeffcoin" init "/Users/jeffprestes/testethereum-2/genesis.json"
 
 2
 geth --datadir "/Users/jeffprestes/testethereum-2" --networkid 15 --ws --wsaddr "127.0.0.1" --identity "jeffcoin" --rpc --rpcaddr "127.0.0.1" --rpccorsdomain "*" --wsapi "admin,db,eth,debug,miner,net,shh,txpool,personal,web3" --rpcapi "admin,db,eth,debug,miner,net,shh,txpool,personal,web3" --targetgaslimit "9000000000000" 
 
-https://gist.github.com/jeffprestes/eea72b01f2c033837f2492921901fe33#file-gistfile1-txt
+3
+geth attach ipc:///Users/jeffprestes/testethereum/geth.ipc
+
+4 #criar conta
+personal.newAccount()
+
+5 #adicionar peers
+admin.addPeer("0x") //peer
+
+# Verificar qtde mineirada #
+web3.fromWei(eth.getBalance("0x"),"ether") // substituir "0x" por sua conta
+
